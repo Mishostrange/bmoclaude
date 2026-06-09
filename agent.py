@@ -11,13 +11,21 @@
 #  This project is a generic framework and includes no copyrighted assets.
 # =========================================================================
 
+import sys
+import os
+
+# Ensure the project root is on sys.path so `import core`, `import audio`, etc.
+# always resolve correctly regardless of how/where the script is invoked.
+_PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+if _PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, _PROJECT_ROOT)
+
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 import threading
 import time
 import json
-import os
 import subprocess
 import random
 import re
