@@ -1,0 +1,23 @@
+# ── Core (unchanged) ──────────────────────────────────────────────────────
+sounddevice
+numpy
+scipy
+openwakeword
+onnxruntime
+ollama
+duckduckgo-search
+Pillow
+
+# ── Phase 2: Streaming STT ────────────────────────────────────────────────
+# faster-whisper replaces the whisper-cli subprocess.
+# Uses CTranslate2 under the hood — int8 quantization runs well on Pi 5.
+faster-whisper
+
+# ── Phase 1: Silero VAD ───────────────────────────────────────────────────
+# Loaded via torch.hub on first run (cached afterwards).
+# If you want to pin the version or pre-download, see audio/vad.py.
+torch
+torchaudio
+
+# ── Optional: Phase 10 noise suppression ─────────────────────────────────
+# rnnoise-python  # Uncomment when Phase 10 is implemented

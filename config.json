@@ -1,0 +1,26 @@
+{
+  "text_model": "gemma3:1b",
+  "vision_model": "moondream",
+  "voice_model": "piper/en_GB-semaine-medium.onnx",
+  "chat_memory": true,
+  "camera_rotation": 180,
+  "system_prompt_extras": "",
+  "input_device": null,
+  "input_sample_rate": 44100,
+
+  "COMMENT_migration": "Set use_legacy_pipeline to false to activate the new streaming architecture (Phases 0-4).",
+  "use_legacy_pipeline": true,
+
+  "COMMENT_stt": "faster-whisper settings (Phase 2). stt_model: tiny.en / base.en / small.en",
+  "stt_model": "base.en",
+  "stt_quantization": "int8",
+  "stt_partial_interval_ms": 750,
+  "stt_max_audio_buffer_s": 30.0,
+
+  "COMMENT_tts": "Persistent Piper settings (Phase 3). piper_rate must match your voice model's sample_rate in its .json file.",
+  "piper_binary": "./piper/piper",
+  "piper_rate": 22050,
+
+  "COMMENT_memory": "Session memory settings.",
+  "session_max_history": 20
+}
